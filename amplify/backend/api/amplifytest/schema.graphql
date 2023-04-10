@@ -1,0 +1,49 @@
+# This "input" configures a global authorization rule to enable public access to
+# all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
+#input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
+
+# type Todo @model {
+#   id: ID!
+#   name: String!
+#   description: String
+# }
+
+# transportation costs model
+# @author: yuki.kikuya
+# @date: 2023/04/10
+type transportationCosts
+@model
+@auth(
+  rules: [
+    #{ allow: owner }
+    { allow: groups, groups: ["Admins"], mutations: [create, update, delete]}
+    { allow: groups, groups: ["Users"], mutations: [create, update]}
+  ]
+)
+{
+	user_id: ID! @primaryKey(sortKeyFields:["target_date"])
+	target_date: String! @index(name: "target_date_idx")
+	created_at: String!
+	updated_at: String!
+	status: String!
+	amount: Int!
+	comment: String
+	details: [details]
+}
+
+# transportation costs details model
+# @author: yuki.kikuya
+# @date: 2023/04/10
+type details
+{
+	seq: Int!
+	used_at: String!
+	trans_mode: String!
+	board_station: String
+	getoff_station: String
+	price: Int!
+	days: Int
+	is_round: Boolean
+	is_ticket: Boolean
+	note: String
+}
