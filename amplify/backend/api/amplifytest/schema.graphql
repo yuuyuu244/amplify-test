@@ -29,7 +29,7 @@ type TransportationCosts
 	status: String!
 	amount: Int!
 	comment: String
-	details: [details]
+	details: [Details]
 }
 
 # transportation costs details model
