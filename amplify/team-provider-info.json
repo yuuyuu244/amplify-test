@@ -53,7 +53,8 @@
         },
         "amplifytest27f936bePreSignup": {
           "deploymentBucketName": "amplify-amplifytest-staging-155422-deployment",
-          "s3Key": "amplify-builds/amplifytest27f936bePreSignup-324b56367a322f2f3071-build.zip"
+          "s3Key": "amplify-builds/amplifytest27f936bePreSignup-324b56367a322f2f3071-build.zip",
+          "DOMAINALLOWLIST": "'rivine.jp'"
         },
         "amplifytest27f936bePostConfirmation": {
           "deploymentBucketName": "amplify-amplifytest-staging-155422-deployment",

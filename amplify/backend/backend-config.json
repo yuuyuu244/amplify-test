@@ -154,6 +154,14 @@
         }
       ]
     },
+    "AMPLIFY_function_amplifytest27f936bePreSignup_DOMAINALLOWLIST": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "amplifytest27f936bePreSignup"
+        }
+      ]
+    },
     "AMPLIFY_function_amplifytest27f936bePreSignup_deploymentBucketName": {
       "usedBy": [
         {
