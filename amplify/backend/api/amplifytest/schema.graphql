@@ -11,12 +11,13 @@
 # transportation costs model
 # @author: yuki.kikuya
 # @date: 2023/04/10
-type transportationCosts
+type TransportationCosts
 @model
 @auth(
   rules: [
     #{ allow: owner }
     { allow: groups, groups: ["Admins"], operations: [read, create, update, delete]}
+	{ allow: groups, groups: ["Approvers"], operations: [read, create, update, delete]}
     { allow: groups, groups: ["Users"],  operations: [read, create, update]}
   ]
 )
@@ -34,7 +35,7 @@ type transportationCosts
 # transportation costs details model
 # @author: yuki.kikuya
 # @date: 2023/04/10
-type details
+type Details
 {
 	seq: Int!
 	used_at: String!

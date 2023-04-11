@@ -39,6 +39,7 @@
     "useDefault": "default",
     "userPoolGroupList": [
       "Users",
+      "Approvers",
       "Admins"
     ],
     "serviceName": "Cognito",
