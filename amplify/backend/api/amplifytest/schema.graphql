@@ -16,8 +16,8 @@ type transportationCosts
 @auth(
   rules: [
     #{ allow: owner }
-    { allow: groups, groups: ["Admins"], mutations: [create, update, delete]}
-    { allow: groups, groups: ["Users"], mutations: [create, update]}
+    { allow: groups, groups: ["Admins"], operations: [read, create, update, delete]}
+    { allow: groups, groups: ["Users"],  operations: [read, create, update]}
   ]
 )
 {
