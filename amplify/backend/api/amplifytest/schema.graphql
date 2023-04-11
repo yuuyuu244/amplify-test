@@ -11,7 +11,7 @@
 # transportation costs model
 # @author: yuki.kikuya
 # @date: 2023/04/10
-type TransportationCosts
+type TransCosts
 @model
 @auth(
   rules: [
