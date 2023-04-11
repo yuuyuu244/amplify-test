@@ -2,12 +2,12 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createTransportationCosts = /* GraphQL */ `
-  mutation CreateTransportationCosts(
-    $input: CreateTransportationCostsInput!
-    $condition: ModelTransportationCostsConditionInput
+export const createTransCosts = /* GraphQL */ `
+  mutation CreateTransCosts(
+    $input: CreateTransCostsInput!
+    $condition: ModelTransCostsConditionInput
   ) {
-    createTransportationCosts(input: $input, condition: $condition) {
+    createTransCosts(input: $input, condition: $condition) {
       user_id
       target_date
       created_at
@@ -32,12 +32,12 @@ export const createTransportationCosts = /* GraphQL */ `
     }
   }
 `;
-export const updateTransportationCosts = /* GraphQL */ `
-  mutation UpdateTransportationCosts(
-    $input: UpdateTransportationCostsInput!
-    $condition: ModelTransportationCostsConditionInput
+export const updateTransCosts = /* GraphQL */ `
+  mutation UpdateTransCosts(
+    $input: UpdateTransCostsInput!
+    $condition: ModelTransCostsConditionInput
   ) {
-    updateTransportationCosts(input: $input, condition: $condition) {
+    updateTransCosts(input: $input, condition: $condition) {
       user_id
       target_date
       created_at
@@ -62,12 +62,12 @@ export const updateTransportationCosts = /* GraphQL */ `
     }
   }
 `;
-export const deleteTransportationCosts = /* GraphQL */ `
-  mutation DeleteTransportationCosts(
-    $input: DeleteTransportationCostsInput!
-    $condition: ModelTransportationCostsConditionInput
+export const deleteTransCosts = /* GraphQL */ `
+  mutation DeleteTransCosts(
+    $input: DeleteTransCostsInput!
+    $condition: ModelTransCostsConditionInput
   ) {
-    deleteTransportationCosts(input: $input, condition: $condition) {
+    deleteTransCosts(input: $input, condition: $condition) {
       user_id
       target_date
       created_at

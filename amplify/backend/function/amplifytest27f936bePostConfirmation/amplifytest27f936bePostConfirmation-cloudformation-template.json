@@ -1,13 +1,42 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
-  "Description": "Lambda resource stack creation using Amplify CLI",
+  "Description": "{\"createdOn\":\"Mac\",\"createdBy\":\"Amplify\",\"createdWith\":\"11.0.3\",\"stackType\":\"function-Lambda\",\"metadata\":{}}",
   "Parameters": {
+    "GROUP": {
+      "Type": "String",
+      "Default": ""
+    },
+    "modules": {
+      "Type": "String",
+      "Default": "",
+      "Description": "Comma-delimited list of modules to be executed by a lambda trigger. Sent to resource as an env variable."
+    },
+    "resourceName": {
+      "Type": "String",
+      "Default": ""
+    },
+    "trigger": {
+      "Type": "String",
+      "Default": "true"
+    },
+    "functionName": {
+      "Type": "String",
+      "Default": ""
+    },
+    "roleName": {
+      "Type": "String",
+      "Default": ""
+    },
+    "parentResource": {
+      "Type": "String",
+      "Default": ""
+    },
+    "parentStack": {
+      "Type": "String",
+      "Default": ""
+    },
     "env": {
       "Type": "String"
-    },
-    "authamplifytest27f936beUserPoolId": {
-      "Type": "String",
-      "Default": "authamplifytest27f936beUserPoolId"
     },
     "deploymentBucketName": {
       "Type": "String"
@@ -38,12 +67,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "AdminQueries939bad81",
+            "amplifytest27f936bePostConfirmation",
             {
               "Fn::Join": [
                 "",
                 [
-                  "AdminQueries939bad81",
+                  "amplifytest27f936bePostConfirmation",
                   "-",
                   {
                     "Ref": "env"
@@ -58,9 +87,14 @@
             "ENV": {
               "Ref": "env"
             },
-            "GROUP": "Admin",
-            "USERPOOL": {
-              "Ref": "authamplifytest27f936beUserPoolId"
+            "MODULES": {
+              "Ref": "modules"
+            },
+            "REGION": {
+              "Ref": "AWS::Region"
+            },
+            "GROUP": {
+              "Ref": "GROUP"
             }
           }
         },
@@ -88,12 +122,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "AdminQueries939bad81LambdaRole",
+            "amplifytest27f936bePostConfirmation",
             {
               "Fn::Join": [
                 "",
                 [
-                  "AdminQueries939bad81LambdaRole",
+                  "amplifytest27f936bePostConfirmation",
                   "-",
                   {
                     "Ref": "env"
@@ -159,41 +193,6 @@
                   }
                 ]
               }
-            },
-            {
-              "Effect": "Allow",
-              "Action": [
-                "cognito-idp:ListUsersInGroup",
-                "cognito-idp:AdminUserGlobalSignOut",
-                "cognito-idp:AdminEnableUser",
-                "cognito-idp:AdminDisableUser",
-                "cognito-idp:AdminRemoveUserFromGroup",
-                "cognito-idp:AdminAddUserToGroup",
-                "cognito-idp:AdminListGroupsForUser",
-                "cognito-idp:AdminGetUser",
-                "cognito-idp:AdminConfirmSignUp",
-                "cognito-idp:ListUsers",
-                "cognito-idp:ListGroups"
-              ],
-              "Resource": {
-                "Fn::Join": [
-                  "",
-                  [
-                    "arn:aws:cognito-idp:",
-                    {
-                      "Ref": "AWS::Region"
-                    },
-                    ":",
-                    {
-                      "Ref": "AWS::AccountId"
-                    },
-                    ":userpool/",
-                    {
-                      "Ref": "authamplifytest27f936beUserPoolId"
-                    }
-                  ]
-                ]
-              }
             }
           ]
         }
@@ -214,11 +213,6 @@
         ]
       }
     },
-    "Region": {
-      "Value": {
-        "Ref": "AWS::Region"
-      }
-    },
     "LambdaExecutionRole": {
       "Value": {
         "Ref": "LambdaExecutionRole"
@@ -230,6 +224,11 @@
           "LambdaExecutionRole",
           "Arn"
         ]
+      }
+    },
+    "Region": {
+      "Value": {
+        "Ref": "AWS::Region"
       }
     }
   }

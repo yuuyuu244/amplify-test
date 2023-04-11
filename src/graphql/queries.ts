@@ -2,9 +2,9 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getTransportationCosts = /* GraphQL */ `
-  query GetTransportationCosts($user_id: ID!, $target_date: String!) {
-    getTransportationCosts(user_id: $user_id, target_date: $target_date) {
+export const getTransCosts = /* GraphQL */ `
+  query GetTransCosts($user_id: ID!, $target_date: String!) {
+    getTransCosts(user_id: $user_id, target_date: $target_date) {
       user_id
       target_date
       created_at
@@ -29,16 +29,16 @@ export const getTransportationCosts = /* GraphQL */ `
     }
   }
 `;
-export const listTransportationCosts = /* GraphQL */ `
-  query ListTransportationCosts(
+export const listTransCosts = /* GraphQL */ `
+  query ListTransCosts(
     $user_id: ID
     $target_date: ModelStringKeyConditionInput
-    $filter: ModelTransportationCostsFilterInput
+    $filter: ModelTransCostsFilterInput
     $limit: Int
     $nextToken: String
     $sortDirection: ModelSortDirection
   ) {
-    listTransportationCosts(
+    listTransCosts(
       user_id: $user_id
       target_date: $target_date
       filter: $filter
@@ -73,15 +73,15 @@ export const listTransportationCosts = /* GraphQL */ `
     }
   }
 `;
-export const transportationCostsByTarget_date = /* GraphQL */ `
-  query TransportationCostsByTarget_date(
+export const transCostsByTarget_date = /* GraphQL */ `
+  query TransCostsByTarget_date(
     $target_date: String!
     $sortDirection: ModelSortDirection
-    $filter: ModeltransportationCostsFilterInput
+    $filter: ModelTransCostsFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    transportationCostsByTarget_date(
+    transCostsByTarget_date(
       target_date: $target_date
       sortDirection: $sortDirection
       filter: $filter

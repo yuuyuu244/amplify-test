@@ -2,7 +2,7 @@
 /* eslint-disable */
 //  This file was automatically generated and should not be edited.
 
-export type CreateTransportationCostsInput = {
+export type CreateTransCostsInput = {
   user_id: string,
   target_date: string,
   created_at: string,
@@ -26,20 +26,18 @@ export type DetailsInput = {
   note?: string | null,
 };
 
-export type ModelTransportationCostsConditionInput = {
-  user_id?: ModelIDInput | null,
-  target_date?: ModelStringInput | null,
+export type ModelTransCostsConditionInput = {
   created_at?: ModelStringInput | null,
   updated_at?: ModelStringInput | null,
   status?: ModelStringInput | null,
   amount?: ModelIntInput | null,
   comment?: ModelStringInput | null,
-  and?: Array< ModelTransportationCostsConditionInput | null > | null,
-  or?: Array< ModelTransportationCostsConditionInput | null > | null,
-  not?: ModelTransportationCostsConditionInput | null,
+  and?: Array< ModelTransCostsConditionInput | null > | null,
+  or?: Array< ModelTransCostsConditionInput | null > | null,
+  not?: ModelTransCostsConditionInput | null,
 };
 
-export type ModelIDInput = {
+export type ModelStringInput = {
   ne?: string | null,
   eq?: string | null,
   le?: string | null,
@@ -79,7 +77,86 @@ export type ModelSizeInput = {
   between?: Array< number | null > | null,
 };
 
-export type ModelStringInput = {
+export type ModelIntInput = {
+  ne?: number | null,
+  eq?: number | null,
+  le?: number | null,
+  lt?: number | null,
+  ge?: number | null,
+  gt?: number | null,
+  between?: Array< number | null > | null,
+  attributeExists?: boolean | null,
+  attributeType?: ModelAttributeTypes | null,
+};
+
+export type TransCosts = {
+  __typename: "TransCosts",
+  user_id: string,
+  target_date: string,
+  created_at: string,
+  updated_at: string,
+  status: string,
+  amount: number,
+  comment?: string | null,
+  details?:  Array<Details | null > | null,
+  createdAt: string,
+  updatedAt: string,
+};
+
+export type Details = {
+  __typename: "Details",
+  seq: number,
+  used_at: string,
+  trans_mode: string,
+  board_station?: string | null,
+  getoff_station?: string | null,
+  price: number,
+  days?: number | null,
+  is_round?: boolean | null,
+  is_ticket?: boolean | null,
+  note?: string | null,
+};
+
+export type UpdateTransCostsInput = {
+  user_id: string,
+  target_date: string,
+  created_at?: string | null,
+  updated_at?: string | null,
+  status?: string | null,
+  amount?: number | null,
+  comment?: string | null,
+  details?: Array< DetailsInput | null > | null,
+};
+
+export type DeleteTransCostsInput = {
+  user_id: string,
+  target_date: string,
+};
+
+export type ModelStringKeyConditionInput = {
+  eq?: string | null,
+  le?: string | null,
+  lt?: string | null,
+  ge?: string | null,
+  gt?: string | null,
+  between?: Array< string | null > | null,
+  beginsWith?: string | null,
+};
+
+export type ModelTransCostsFilterInput = {
+  user_id?: ModelIDInput | null,
+  target_date?: ModelStringInput | null,
+  created_at?: ModelStringInput | null,
+  updated_at?: ModelStringInput | null,
+  status?: ModelStringInput | null,
+  amount?: ModelIntInput | null,
+  comment?: ModelStringInput | null,
+  and?: Array< ModelTransCostsFilterInput | null > | null,
+  or?: Array< ModelTransCostsFilterInput | null > | null,
+  not?: ModelTransCostsFilterInput | null,
+};
+
+export type ModelIDInput = {
   ne?: string | null,
   eq?: string | null,
   le?: string | null,
@@ -95,117 +172,19 @@ export type ModelStringInput = {
   size?: ModelSizeInput | null,
 };
 
-export type ModelIntInput = {
-  ne?: number | null,
-  eq?: number | null,
-  le?: number | null,
-  lt?: number | null,
-  ge?: number | null,
-  gt?: number | null,
-  between?: Array< number | null > | null,
-  attributeExists?: boolean | null,
-  attributeType?: ModelAttributeTypes | null,
-};
-
-export type transportationCosts = {
-  __typename: "transportationCosts",
-  user_id: string,
-  target_date: string,
-  created_at: string,
-  updated_at: string,
-  status: string,
-  amount: number,
-  comment?: string | null,
-  details?:  Array<details | null > | null,
-  createdAt: string,
-  updatedAt: string,
-};
-
-export type details = {
-  __typename: "details",
-  seq: number,
-  used_at: string,
-  trans_mode: string,
-  board_station?: string | null,
-  getoff_station?: string | null,
-  price: number,
-  days?: number | null,
-  is_round?: boolean | null,
-  is_ticket?: boolean | null,
-  note?: string | null,
-};
-
-export type UpdateTransportationCostsInput = {
-  user_id: string,
-  target_date: string,
-  created_at?: string | null,
-  updated_at?: string | null,
-  status?: string | null,
-  amount?: number | null,
-  comment?: string | null,
-  details?: Array< DetailsInput | null > | null,
-};
-
-export type DeleteTransportationCostsInput = {
-  user_id: string,
-  target_date: string,
-};
-
-export type ModelStringKeyConditionInput = {
-  eq?: string | null,
-  le?: string | null,
-  lt?: string | null,
-  ge?: string | null,
-  gt?: string | null,
-  between?: Array< string | null > | null,
-  beginsWith?: string | null,
-};
-
-export type ModelTransportationCostsFilterInput = {
-  user_id?: ModelIDInput | null,
-  target_date?: ModelStringInput | null,
-  created_at?: ModelStringInput | null,
-  updated_at?: ModelStringInput | null,
-  status?: ModelStringInput | null,
-  amount?: ModelIntInput | null,
-  comment?: ModelStringInput | null,
-  and?: Array< ModelTransportationCostsFilterInput | null > | null,
-  or?: Array< ModelTransportationCostsFilterInput | null > | null,
-  not?: ModelTransportationCostsFilterInput | null,
-};
-
 export enum ModelSortDirection {
   ASC = "ASC",
   DESC = "DESC",
 }
 
 
-export type ModelTransportationCostsConnection = {
-  __typename: "ModelTransportationCostsConnection",
-  items:  Array<transportationCosts | null >,
+export type ModelTransCostsConnection = {
+  __typename: "ModelTransCostsConnection",
+  items:  Array<TransCosts | null >,
   nextToken?: string | null,
 };
 
-export type ModeltransportationCostsFilterInput = {
-  user_id?: ModelIDInput | null,
-  target_date?: ModelStringInput | null,
-  created_at?: ModelStringInput | null,
-  updated_at?: ModelStringInput | null,
-  status?: ModelStringInput | null,
-  amount?: ModelIntInput | null,
-  comment?: ModelStringInput | null,
-  and?: Array< ModeltransportationCostsFilterInput | null > | null,
-  or?: Array< ModeltransportationCostsFilterInput | null > | null,
-  not?: ModeltransportationCostsFilterInput | null,
-};
-
-export type ModeltransportationCostsConnection = {
-  __typename: "ModeltransportationCostsConnection",
-  items:  Array<transportationCosts | null >,
-  nextToken?: string | null,
-};
-
-export type ModelSubscriptionTransportationCostsFilterInput = {
+export type ModelSubscriptionTransCostsFilterInput = {
   user_id?: ModelSubscriptionIDInput | null,
   target_date?: ModelSubscriptionStringInput | null,
   created_at?: ModelSubscriptionStringInput | null,
@@ -213,8 +192,8 @@ export type ModelSubscriptionTransportationCostsFilterInput = {
   status?: ModelSubscriptionStringInput | null,
   amount?: ModelSubscriptionIntInput | null,
   comment?: ModelSubscriptionStringInput | null,
-  and?: Array< ModelSubscriptionTransportationCostsFilterInput | null > | null,
-  or?: Array< ModelSubscriptionTransportationCostsFilterInput | null > | null,
+  and?: Array< ModelSubscriptionTransCostsFilterInput | null > | null,
+  or?: Array< ModelSubscriptionTransCostsFilterInput | null > | null,
 };
 
 export type ModelSubscriptionIDInput = {
@@ -259,14 +238,14 @@ export type ModelSubscriptionIntInput = {
   notIn?: Array< number | null > | null,
 };
 
-export type CreateTransportationCostsMutationVariables = {
-  input: CreateTransportationCostsInput,
-  condition?: ModelTransportationCostsConditionInput | null,
+export type CreateTransCostsMutationVariables = {
+  input: CreateTransCostsInput,
+  condition?: ModelTransCostsConditionInput | null,
 };
 
-export type CreateTransportationCostsMutation = {
-  createTransportationCosts?:  {
-    __typename: "transportationCosts",
+export type CreateTransCostsMutation = {
+  createTransCosts?:  {
+    __typename: "TransCosts",
     user_id: string,
     target_date: string,
     created_at: string,
@@ -275,7 +254,7 @@ export type CreateTransportationCostsMutation = {
     amount: number,
     comment?: string | null,
     details?:  Array< {
-      __typename: "details",
+      __typename: "Details",
       seq: number,
       used_at: string,
       trans_mode: string,
@@ -292,14 +271,14 @@ export type CreateTransportationCostsMutation = {
   } | null,
 };
 
-export type UpdateTransportationCostsMutationVariables = {
-  input: UpdateTransportationCostsInput,
-  condition?: ModelTransportationCostsConditionInput | null,
+export type UpdateTransCostsMutationVariables = {
+  input: UpdateTransCostsInput,
+  condition?: ModelTransCostsConditionInput | null,
 };
 
-export type UpdateTransportationCostsMutation = {
-  updateTransportationCosts?:  {
-    __typename: "transportationCosts",
+export type UpdateTransCostsMutation = {
+  updateTransCosts?:  {
+    __typename: "TransCosts",
     user_id: string,
     target_date: string,
     created_at: string,
@@ -308,7 +287,7 @@ export type UpdateTransportationCostsMutation = {
     amount: number,
     comment?: string | null,
     details?:  Array< {
-      __typename: "details",
+      __typename: "Details",
       seq: number,
       used_at: string,
       trans_mode: string,
@@ -325,14 +304,14 @@ export type UpdateTransportationCostsMutation = {
   } | null,
 };
 
-export type DeleteTransportationCostsMutationVariables = {
-  input: DeleteTransportationCostsInput,
-  condition?: ModelTransportationCostsConditionInput | null,
+export type DeleteTransCostsMutationVariables = {
+  input: DeleteTransCostsInput,
+  condition?: ModelTransCostsConditionInput | null,
 };
 
-export type DeleteTransportationCostsMutation = {
-  deleteTransportationCosts?:  {
-    __typename: "transportationCosts",
+export type DeleteTransCostsMutation = {
+  deleteTransCosts?:  {
+    __typename: "TransCosts",
     user_id: string,
     target_date: string,
     created_at: string,
@@ -341,7 +320,7 @@ export type DeleteTransportationCostsMutation = {
     amount: number,
     comment?: string | null,
     details?:  Array< {
-      __typename: "details",
+      __typename: "Details",
       seq: number,
       used_at: string,
       trans_mode: string,
@@ -358,14 +337,14 @@ export type DeleteTransportationCostsMutation = {
   } | null,
 };
 
-export type GetTransportationCostsQueryVariables = {
+export type GetTransCostsQueryVariables = {
   user_id: string,
   target_date: string,
 };
 
-export type GetTransportationCostsQuery = {
-  getTransportationCosts?:  {
-    __typename: "transportationCosts",
+export type GetTransCostsQuery = {
+  getTransCosts?:  {
+    __typename: "TransCosts",
     user_id: string,
     target_date: string,
     created_at: string,
@@ -374,7 +353,7 @@ export type GetTransportationCostsQuery = {
     amount: number,
     comment?: string | null,
     details?:  Array< {
-      __typename: "details",
+      __typename: "Details",
       seq: number,
       used_at: string,
       trans_mode: string,
@@ -391,20 +370,20 @@ export type GetTransportationCostsQuery = {
   } | null,
 };
 
-export type ListTransportationCostsQueryVariables = {
+export type ListTransCostsQueryVariables = {
   user_id?: string | null,
   target_date?: ModelStringKeyConditionInput | null,
-  filter?: ModelTransportationCostsFilterInput | null,
+  filter?: ModelTransCostsFilterInput | null,
   limit?: number | null,
   nextToken?: string | null,
   sortDirection?: ModelSortDirection | null,
 };
 
-export type ListTransportationCostsQuery = {
-  listTransportationCosts?:  {
-    __typename: "ModelTransportationCostsConnection",
+export type ListTransCostsQuery = {
+  listTransCosts?:  {
+    __typename: "ModelTransCostsConnection",
     items:  Array< {
-      __typename: "transportationCosts",
+      __typename: "TransCosts",
       user_id: string,
       target_date: string,
       created_at: string,
@@ -413,7 +392,7 @@ export type ListTransportationCostsQuery = {
       amount: number,
       comment?: string | null,
       details?:  Array< {
-        __typename: "details",
+        __typename: "Details",
         seq: number,
         used_at: string,
         trans_mode: string,
@@ -432,19 +411,19 @@ export type ListTransportationCostsQuery = {
   } | null,
 };
 
-export type TransportationCostsByTarget_dateQueryVariables = {
+export type TransCostsByTarget_dateQueryVariables = {
   target_date: string,
   sortDirection?: ModelSortDirection | null,
-  filter?: ModeltransportationCostsFilterInput | null,
+  filter?: ModelTransCostsFilterInput | null,
   limit?: number | null,
   nextToken?: string | null,
 };
 
-export type TransportationCostsByTarget_dateQuery = {
-  transportationCostsByTarget_date?:  {
-    __typename: "ModeltransportationCostsConnection",
+export type TransCostsByTarget_dateQuery = {
+  transCostsByTarget_date?:  {
+    __typename: "ModelTransCostsConnection",
     items:  Array< {
-      __typename: "transportationCosts",
+      __typename: "TransCosts",
       user_id: string,
       target_date: string,
       created_at: string,
@@ -453,7 +432,7 @@ export type TransportationCostsByTarget_dateQuery = {
       amount: number,
       comment?: string | null,
       details?:  Array< {
-        __typename: "details",
+        __typename: "Details",
         seq: number,
         used_at: string,
         trans_mode: string,
@@ -472,13 +451,13 @@ export type TransportationCostsByTarget_dateQuery = {
   } | null,
 };
 
-export type OnCreateTransportationCostsSubscriptionVariables = {
-  filter?: ModelSubscriptionTransportationCostsFilterInput | null,
+export type OnCreateTransCostsSubscriptionVariables = {
+  filter?: ModelSubscriptionTransCostsFilterInput | null,
 };
 
-export type OnCreateTransportationCostsSubscription = {
-  onCreateTransportationCosts?:  {
-    __typename: "transportationCosts",
+export type OnCreateTransCostsSubscription = {
+  onCreateTransCosts?:  {
+    __typename: "TransCosts",
     user_id: string,
     target_date: string,
     created_at: string,
@@ -487,7 +466,7 @@ export type OnCreateTransportationCostsSubscription = {
     amount: number,
     comment?: string | null,
     details?:  Array< {
-      __typename: "details",
+      __typename: "Details",
       seq: number,
       used_at: string,
       trans_mode: string,
@@ -504,13 +483,13 @@ export type OnCreateTransportationCostsSubscription = {
   } | null,
 };
 
-export type OnUpdateTransportationCostsSubscriptionVariables = {
-  filter?: ModelSubscriptionTransportationCostsFilterInput | null,
+export type OnUpdateTransCostsSubscriptionVariables = {
+  filter?: ModelSubscriptionTransCostsFilterInput | null,
 };
 
-export type OnUpdateTransportationCostsSubscription = {
-  onUpdateTransportationCosts?:  {
-    __typename: "transportationCosts",
+export type OnUpdateTransCostsSubscription = {
+  onUpdateTransCosts?:  {
+    __typename: "TransCosts",
     user_id: string,
     target_date: string,
     created_at: string,
@@ -519,7 +498,7 @@ export type OnUpdateTransportationCostsSubscription = {
     amount: number,
     comment?: string | null,
     details?:  Array< {
-      __typename: "details",
+      __typename: "Details",
       seq: number,
       used_at: string,
       trans_mode: string,
@@ -536,13 +515,13 @@ export type OnUpdateTransportationCostsSubscription = {
   } | null,
 };
 
-export type OnDeleteTransportationCostsSubscriptionVariables = {
-  filter?: ModelSubscriptionTransportationCostsFilterInput | null,
+export type OnDeleteTransCostsSubscriptionVariables = {
+  filter?: ModelSubscriptionTransCostsFilterInput | null,
 };
 
-export type OnDeleteTransportationCostsSubscription = {
-  onDeleteTransportationCosts?:  {
-    __typename: "transportationCosts",
+export type OnDeleteTransCostsSubscription = {
+  onDeleteTransCosts?:  {
+    __typename: "TransCosts",
     user_id: string,
     target_date: string,
     created_at: string,
@@ -551,7 +530,7 @@ export type OnDeleteTransportationCostsSubscription = {
     amount: number,
     comment?: string | null,
     details?:  Array< {
-      __typename: "details",
+      __typename: "Details",
       seq: number,
       used_at: string,
       trans_mode: string,

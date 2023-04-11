@@ -2,11 +2,11 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateTransportationCosts = /* GraphQL */ `
-  subscription OnCreateTransportationCosts(
-    $filter: ModelSubscriptionTransportationCostsFilterInput
+export const onCreateTransCosts = /* GraphQL */ `
+  subscription OnCreateTransCosts(
+    $filter: ModelSubscriptionTransCostsFilterInput
   ) {
-    onCreateTransportationCosts(filter: $filter) {
+    onCreateTransCosts(filter: $filter) {
       user_id
       target_date
       created_at
@@ -31,11 +31,11 @@ export const onCreateTransportationCosts = /* GraphQL */ `
     }
   }
 `;
-export const onUpdateTransportationCosts = /* GraphQL */ `
-  subscription OnUpdateTransportationCosts(
-    $filter: ModelSubscriptionTransportationCostsFilterInput
+export const onUpdateTransCosts = /* GraphQL */ `
+  subscription OnUpdateTransCosts(
+    $filter: ModelSubscriptionTransCostsFilterInput
   ) {
-    onUpdateTransportationCosts(filter: $filter) {
+    onUpdateTransCosts(filter: $filter) {
       user_id
       target_date
       created_at
@@ -60,11 +60,11 @@ export const onUpdateTransportationCosts = /* GraphQL */ `
     }
   }
 `;
-export const onDeleteTransportationCosts = /* GraphQL */ `
-  subscription OnDeleteTransportationCosts(
-    $filter: ModelSubscriptionTransportationCostsFilterInput
+export const onDeleteTransCosts = /* GraphQL */ `
+  subscription OnDeleteTransCosts(
+    $filter: ModelSubscriptionTransCostsFilterInput
   ) {
-    onDeleteTransportationCosts(filter: $filter) {
+    onDeleteTransCosts(filter: $filter) {
       user_id
       target_date
       created_at
