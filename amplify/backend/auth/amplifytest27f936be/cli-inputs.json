@@ -37,11 +37,7 @@
     "resourceName": "amplifytest27f936be",
     "authSelections": "identityPoolAndUserPool",
     "useDefault": "default",
-    "userPoolGroupList": [
-      "Users",
-      "Approvers",
-      "Admins"
-    ],
+    "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
     "useEnabledMfas": true,

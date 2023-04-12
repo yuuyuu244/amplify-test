@@ -35,8 +35,7 @@
     },
     "categories": {
       "auth": {
-        "amplifytest27f936be": {},
-        "userPoolGroups": {}
+        "amplifytest27f936be": {}
       },
       "api": {
         "amplifytest": {},
@@ -49,7 +48,10 @@
         },
         "amplifytest27f936beCustomMessage": {
           "deploymentBucketName": "amplify-amplifytest-staging-155422-deployment",
-          "s3Key": "amplify-builds/amplifytest27f936beCustomMessage-2f6168547a476a454133-build.zip"
+          "s3Key": "amplify-builds/amplifytest27f936beCustomMessage-2f6168547a476a454133-build.zip",
+          "REDIRECTURL": "",
+          "EMAILSUBJECT": "",
+          "EMAILMESSAGE": ""
         },
         "amplifytest27f936bePreSignup": {
           "deploymentBucketName": "amplify-amplifytest-staging-155422-deployment",

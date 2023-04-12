@@ -34,7 +34,14 @@
       ],
       "output": {
         "authConfig": {
-          "additionalAuthenticationProviders": [],
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authamplifytest27f936be"
+              }
+            }
+          ],
           "defaultAuthentication": {
             "authenticationType": "AMAZON_COGNITO_USER_POOLS",
             "userPoolConfig": {
@@ -71,22 +78,6 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
-    },
-    "userPoolGroups": {
-      "dependsOn": [
-        {
-          "attributes": [
-            "UserPoolId",
-            "AppClientIDWeb",
-            "AppClientID",
-            "IdentityPoolId"
-          ],
-          "category": "auth",
-          "resourceName": "amplifytest27f936be"
-        }
-      ],
-      "providerPlugin": "awscloudformation",
-      "service": "Cognito-UserPool-Groups"
     }
   },
   "function": {
@@ -103,80 +94,6 @@
       ],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
-    }
-  },
-  "parameters": {
-    "AMPLIFY_function_AdminQueries939bad81_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "AdminQueries939bad81"
-        }
-      ]
-    },
-    "AMPLIFY_function_AdminQueries939bad81_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "AdminQueries939bad81"
-        }
-      ]
-    },
-    "AMPLIFY_function_amplifytest27f936beCustomMessage_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "amplifytest27f936beCustomMessage"
-        }
-      ]
-    },
-    "AMPLIFY_function_amplifytest27f936beCustomMessage_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "amplifytest27f936beCustomMessage"
-        }
-      ]
-    },
-    "AMPLIFY_function_amplifytest27f936bePostConfirmation_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "amplifytest27f936bePostConfirmation"
-        }
-      ]
-    },
-    "AMPLIFY_function_amplifytest27f936bePostConfirmation_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "amplifytest27f936bePostConfirmation"
-        }
-      ]
-    },
-    "AMPLIFY_function_amplifytest27f936bePreSignup_DOMAINALLOWLIST": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "amplifytest27f936bePreSignup"
-        }
-      ]
-    },
-    "AMPLIFY_function_amplifytest27f936bePreSignup_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "amplifytest27f936bePreSignup"
-        }
-      ]
-    },
-    "AMPLIFY_function_amplifytest27f936bePreSignup_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "amplifytest27f936bePreSignup"
-        }
-      ]
     }
   }
 }
