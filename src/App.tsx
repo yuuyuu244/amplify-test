@@ -1,36 +1,42 @@
-import { useState } from 'react'
-//import ReactDOM from 'react-dom/client'
-
 import { Amplify } from 'aws-amplify'
 import { Authenticator } from '@aws-amplify/ui-react'
 import '@aws-amplify/ui-react/styles.css'
+
+import RequireAuth from './components/RequireAuth'
 
 import awsmobile from './aws-exports'
 
 Amplify.configure(awsmobile)
 
-// function App() {
-//   const [count, setCount] = useState(0)
+import {Route, Routes, BrowserRouter} from 'react-router-dom'
+import Dashboard from './routes/dashboard'
+import Admin from './routes/admin'
+import Login from './components/login'
+import Home from './routes/home'
 
-//   return (
-//     <div className="App">
-//       TEST
-//     </div>
-//   )
-// }
-function App() {
-  return (
-    <div className="App">
-      <h1>test</h1>
-      <Authenticator>
-       {({ signOut, user }) => (
-        <main>
-          <h1>こんにちは、 {user.username} さん</h1>
-          <button onClick={signOut}>サインアウト</button>
-        </main>
-      )}
-      </Authenticator>
-    </div>
+import ReactAppSyncSampleApp from './sample'
+
+function MyRoutes() {
+  return(
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home/>}>
+        <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} />
+        <Route path="/admin" element={<RequireAuth><Admin /></RequireAuth>} />
+      </Route>
+      <Route path="/login" element={<Login />} />
+    </Routes>
+  </BrowserRouter>
   )
 }
+
+function App() {
+  return (
+    <Authenticator.Provider>
+       <MyRoutes />
+       <ReactAppSyncSampleApp />
+    </Authenticator.Provider>
+  )
+}
+
 export default App
