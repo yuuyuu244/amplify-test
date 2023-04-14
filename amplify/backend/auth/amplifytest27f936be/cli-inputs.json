@@ -54,6 +54,16 @@
       ]
     },
     "breakCircularDependency": true,
-    "dependsOn": []
+    "dependsOn": [],
+    "userPoolGroups": false,
+    "adminQueries": true,
+    "triggers": {},
+    "hostedUI": false,
+    "adminQueryGroup": "Admins",
+    "parentStack": {
+      "Ref": "AWS::StackId"
+    },
+    "permissions": [],
+    "authProviders": []
   }
 }

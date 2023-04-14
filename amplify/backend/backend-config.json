@@ -34,14 +34,7 @@
       ],
       "output": {
         "authConfig": {
-          "additionalAuthenticationProviders": [
-            {
-              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
-              "userPoolConfig": {
-                "userPoolId": "authamplifytest27f936be"
-              }
-            }
-          ],
+          "additionalAuthenticationProviders": [],
           "defaultAuthentication": {
             "authenticationType": "AMAZON_COGNITO_USER_POOLS",
             "userPoolConfig": {
@@ -94,6 +87,104 @@
       ],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_AdminQueries939bad81_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "AdminQueries939bad81"
+        }
+      ]
+    },
+    "AMPLIFY_function_AdminQueries939bad81_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "AdminQueries939bad81"
+        }
+      ]
+    },
+    "AMPLIFY_function_amplifytest27f936beCustomMessage_EMAILMESSAGE": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "amplifytest27f936beCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_amplifytest27f936beCustomMessage_EMAILSUBJECT": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "amplifytest27f936beCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_amplifytest27f936beCustomMessage_REDIRECTURL": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "amplifytest27f936beCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_amplifytest27f936beCustomMessage_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "amplifytest27f936beCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_amplifytest27f936beCustomMessage_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "amplifytest27f936beCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_amplifytest27f936bePostConfirmation_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "amplifytest27f936bePostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_amplifytest27f936bePostConfirmation_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "amplifytest27f936bePostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_amplifytest27f936bePreSignup_DOMAINALLOWLIST": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "amplifytest27f936bePreSignup"
+        }
+      ]
+    },
+    "AMPLIFY_function_amplifytest27f936bePreSignup_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "amplifytest27f936bePreSignup"
+        }
+      ]
+    },
+    "AMPLIFY_function_amplifytest27f936bePreSignup_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "amplifytest27f936bePreSignup"
+        }
+      ]
     }
   }
 }
